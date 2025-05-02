@@ -121,8 +121,8 @@ def mouse_event_handler(event, x, y, flags, param):
 # === Camera Loop ===
 def camera_loop(cam_id):
     cap = cv2.VideoCapture(cam_id)
-    cv2.namedWindow("ProjectorBlocker")
-    cv2.setMouseCallback("ProjectorBlocker", mouse_event_handler)
+    cv2.namedWindow("FaceShieldProjector")
+    cv2.setMouseCallback("FaceShieldProjector", mouse_event_handler)
 
     show_face_windows = True  # Toggle with 'h'
 
@@ -175,7 +175,7 @@ def camera_loop(cam_id):
             root.after(0, hide_all_windows)
 
         # Show camera
-        cv2.imshow("ProjectorBlocker", frame)
+        cv2.imshow("FaceShieldProjector", frame)
         key = cv2.waitKey(1) & 0xFF
 
         if key == ord('q'):
@@ -187,7 +187,7 @@ def camera_loop(cam_id):
             print(f"[INFO] Projection corners saved to {args.corners}")
 
         # Exit if user closes the window
-        if cv2.getWindowProperty("ProjectorBlocker", cv2.WND_PROP_VISIBLE) < 1:
+        if cv2.getWindowProperty("FaceShieldProjector", cv2.WND_PROP_VISIBLE) < 1:
             break
 
     cap.release()
