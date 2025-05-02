@@ -121,7 +121,7 @@ def mouse_event_handler(event, x, y, flags, param):
 # === Camera Loop ===
 def camera_loop(cam_id):
     cap = cv2.VideoCapture(cam_id)
-    cv2.namedWindow("Camera View")
+    cv2.namedWindow("ProjectorBlocker")
     cv2.setMouseCallback("ProjectorBlocker", mouse_event_handler)
 
     show_face_windows = True  # Toggle with 'h'
