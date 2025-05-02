@@ -1,4 +1,4 @@
-ProjectorBlocker
+FaceShieldProjector
 
 Projector Face Protector
 
