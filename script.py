@@ -175,7 +175,7 @@ def camera_loop(cam_id):
             root.after(0, hide_all_windows)
 
         # Show camera
-        cv2.imshow("Camera View", frame)
+        cv2.imshow("ProjectorBlocker", frame)
         key = cv2.waitKey(1) & 0xFF
 
         if key == ord('q'):
@@ -187,7 +187,7 @@ def camera_loop(cam_id):
             print(f"[INFO] Projection corners saved to {args.corners}")
 
         # Exit if user closes the window
-        if cv2.getWindowProperty("Camera View", cv2.WND_PROP_VISIBLE) < 1:
+        if cv2.getWindowProperty("ProjectorBlocker", cv2.WND_PROP_VISIBLE) < 1:
             break
 
     cap.release()
